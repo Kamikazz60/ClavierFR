@@ -1,0 +1,16 @@
+# récupéré/généré par setup.ps1 et la compilation
+futo-keyboard/
+apk/
+*.log
+*.err
+*.jks
+cle.txt
+keystore.properties
+local.properties
+# données personnelles et lourdes
+donnees/
+ml/venv/
+ml/data/
+ml/runs/
+ml/export/
+__pycache__/

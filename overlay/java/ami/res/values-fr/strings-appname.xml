@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="english_ime_name" translatable="false">ClavierFR</string>
+    <string name="spell_checker_service_name" translatable="false">ClavierFR Spell Checker</string>
+    <string name="english_ime_settings" translatable="false">ClavierFR (version modifiée de FUTO Keyboard)</string>
+    <string name="android_spell_checker_settings" translatable="false">ClavierFR Spell Checker Settings</string>
+</resources>

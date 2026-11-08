@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+        <!-- repris de java/stable/AndroidManifest.xml (nécessaire au code partagé) -->
+        <service
+            android:name="org.futo.inputmethod.updates.UpdateCheckingService"
+            android:label="@string/autoupdater_service_title"
+            android:permission="android.permission.BIND_JOB_SERVICE" >
+        </service>
+
+        <receiver android:name="org.futo.inputmethod.updates.InstallReceiver" />
+
+        <!-- Outil de mesure réservé au développement : absent de la version distribuée -->
+        <activity android:name="org.futo.inputmethod.latin.SwipeRecorderActivity" tools:node="remove" />
+    </application>
+</manifest>
