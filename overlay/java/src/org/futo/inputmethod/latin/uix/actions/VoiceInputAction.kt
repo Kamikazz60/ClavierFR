@@ -234,6 +234,7 @@ private class VoiceInputActionWindow(
         runBlocking { initJob.cancelAndJoin() }
         recognizerView.value?.cancel()
         state.modelManager.cancelAll()
+        org.futo.inputmethod.latin.VoiceOnlyMode.onVoiceClosed() // ClavierFR : retour au clavier précédent
         return CloseResult.Default
     }
 
@@ -301,6 +302,11 @@ private class VoiceInputNoModelWindow(val locale: Locale) : ActionWindow() {
     @Composable
     override fun WindowContents(keyboardShown: Boolean) {
         NoModelInstalled(locale)
+    }
+
+    override fun close(): CloseResult {
+        org.futo.inputmethod.latin.VoiceOnlyMode.onVoiceClosed()
+        return CloseResult.Default
     }
 }
 

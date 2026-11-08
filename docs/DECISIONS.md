@@ -31,3 +31,9 @@ Conséquences : installation de PyTorch/ExecuTorch et téléchargement d'un corp
 Décision : fréquences, mots appris, traces et réglages vivent dans le stockage privé de l'appli ; rien de personnel dans l'APK ; collecte de traces désactivée par défaut (consentement), exclue des champs mot de passe, effaçable ; outils d'enregistrement/rejeu réservés au développement.
 Raison : Doanh pourrait donner l'appli à un ami. Alternative écartée : réglages codés en dur sur les traces de Doanh.
 À vérifier avant toute remise à un tiers : licence FUTO Source First (« pas de redistribution publique »), APK propre et signature stable.
+
+## 08/11/2026 — Pivot : l'appli devient « Dictée locale » (dictée seule + clavier habituel)
+Décision : après le benchmark (Gboard 88,6 % contre 74,6 % en swipe), Doanh garde Gboard pour écrire et utilise notre appli pour la dictée FUTO hors ligne, via un « mode dictée seule » avec retour automatique. Nom « Dictée locale » (choix de Doanh), icône micro + bulle.
+Raison : le swipe français n'atteint pas Gboard et aucune voie courte n'existe ; la dictée est le vrai point fort.
+Alternatives écartées : bouton flottant par accessibilité (permission sensible, restreinte sous Android 17) ; décodeur AZERTY (gain attendu < 1 point).
+Conséquence : l'identifiant technique reste `...latin.clavierfr` (renommer casserait la mise à jour et ferait perdre le modèle vocal importé).

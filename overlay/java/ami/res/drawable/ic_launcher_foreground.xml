@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Icône ClavierFR (dessin original, distinct du logo FUTO) : touches + trait de swipe. Zone sûre : 18..90 sur 108. -->
+<!-- Icône « Dictée locale » (dessin original, distinct du logo FUTO) : micro + bulle de texte. Zone sûre : 18..90 sur 108. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <path android:fillColor="#DCE8F5" android:pathData="M31.5,36h7v8h-7zM40,36h7v8h-7zM48.5,36h7v8h-7zM57,36h7v8h-7zM65.5,36h7v8h-7z"/>
-    <path android:fillColor="#DCE8F5" android:pathData="M31.5,46.5h7v8h-7zM40,46.5h7v8h-7zM48.5,46.5h7v8h-7zM57,46.5h7v8h-7zM65.5,46.5h7v8h-7z"/>
-    <path android:fillColor="#DCE8F5" android:pathData="M36.25,57h7v8h-7zM44.75,57h7v8h-7zM53.25,57h7v8h-7zM61.75,57h7v8h-7z"/>
-    <path android:fillColor="#DCE8F5" android:pathData="M41,67.5h26v5h-26z"/>
-    <path android:strokeColor="#FF7A45" android:strokeWidth="3" android:strokeLineCap="round" android:fillColor="#00000000"
-        android:pathData="M34,61C42,30 54,64 63,47S73,38 76,40"/>
-    <path android:fillColor="#FF7A45" android:pathData="M34,61m-3.2,0a3.2,3.2 0,1 1,6.4 0a3.2,3.2 0,1 1,-6.4 0"/>
-    <path android:fillColor="#FFD2B8" android:pathData="M76,40m-3.2,0a3.2,3.2 0,1 1,6.4 0a3.2,3.2 0,1 1,-6.4 0"/>
+    <!-- micro : capsule, arceau, pied -->
+    <path android:fillColor="#DCE8F5" android:pathData="M32,40a8,8 0 0 1 16,0v14a8,8 0 0 1 -16,0z"/>
+    <path android:strokeColor="#DCE8F5" android:strokeWidth="3" android:strokeLineCap="round" android:fillColor="#00000000"
+        android:pathData="M28,52a12,12 0 0 0 24,0M40,64v8M33,73h14"/>
+    <!-- bulle de texte -->
+    <path android:fillColor="#FF7A45" android:pathData="M60,22h20a6,6 0 0 1 6,6v12a6,6 0 0 1 -6,6H60a6,6 0 0 1 -6,-6V28a6,6 0 0 1 6,-6z"/>
+    <path android:fillColor="#FF7A45" android:pathData="M58,45L57,55L68,45z"/>
+    <path android:strokeColor="#162B4A" android:strokeWidth="2.4" android:strokeLineCap="round" android:fillColor="#00000000"
+        android:pathData="M60,29h20M60,34h20M60,39h12"/>
 </vector>

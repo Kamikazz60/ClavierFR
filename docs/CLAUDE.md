@@ -51,6 +51,6 @@ Hors périmètre : autres langues, QWERTY, publication publique du fork.
 Mesure de qualité : taux d'erreur top-1 et top-4 sur un jeu de tracés réels de Doanh (même méthode que FUTO). Une amélioration n'est retenue que si elle est mesurée.
 
 ## 10. Version « ami » (ajoutée le 08/11/2026)
-- Saveur Gradle `ami` (id `org.futo.inputmethod.latin.clavierfr`, nom « ClavierFR »), build release non minifié, sans enregistreur de dev, sans vérif. de mises à jour FUTO. Commande : `.\build_ami.ps1` → `apk\ami\ClavierFR.apk` + `LICENCE-FUTO.md` + `LISEZMOI.txt`.
+- Saveur Gradle `ami` (id `org.futo.inputmethod.latin.clavierfr`, nom « Dictée locale » depuis la 1.1.0), build release non minifié, sans enregistreur de dev, sans vérif. de mises à jour FUTO. Commande : `.\build_ami.ps1` → `apk\ami\DicteeLocale.apk` + `LICENCE-FUTO.md` + `LISEZMOI.txt`.
 - Signature : clé personnelle `C:\Users\Doanh\ClavierFR-cles\clavierfr.jks` + `cle.txt` (HORS projet, à sauvegarder : sans elle, plus de mise à jour par-dessus). Passée à Gradle par variables d'environnement `CLAVIERFR_KS_*`.
 - Le modèle vocal n'est pas dans l'APK : l'ami doit le télécharger une fois sur keyboard.futo.tech puis l'importer.

@@ -175,3 +175,32 @@ Attendre la fin de l'entraînement `runsw1` (≈ 00h15), vérifier `runs_fw1.lo
 - Dépôt public : https://github.com/Kamikazz60/ClavierFR (overlay des fichiers FUTO modifiés + modèle français + outils ; commits sous l'adresse noreply de GitHub). Release v1.0.0 : ClavierFR.apk (SHA-256 0270150417…b69a), LICENCE-FUTO.md, LISEZMOI.txt. Dossier de préparation local : `Programme IA\ClavierFR-depot`.
 - Store Ruche : fiche `clavierfr` ajoutée (audit « points de vigilance »), déployée sur GitHub Pages.
 - À faire : retirer le chemin de compilation des bibliothèques natives (option de compilation file-prefix-map) ; changer l'icône de l'appli (c'est encore le logo FUTO) ; avertissement Avast à surveiller ; retester l'APK 1.0.0 final sur le Pixel si besoin.
+
+## Version 1.0.1 et installation sur le Pixel (08/11/2026)
+- Nouvelle icône ClavierFR (flavor ami : `java/ami/res/drawable/ic_launcher_foreground.xml`, couleur de fond, icône Android 7) ; versionName 1.0.1, versionCode 11769 (à incrémenter à chaque version distribuée).
+- ClavierFR 1.0.1 installé sur le Pixel de Doanh, clavier par défaut, modèle vocal importé, collecte de gestes activée (0 geste au départ ; 2 gestes de test effacés). Icône vérifiée à l'écran. Le Pixel garde aussi la version de développement (outil de rejeu, traces).
+- Release GitHub v1.0.1 publiée, dépôt mis à jour, fiche Ruche mise à jour (déploiement Pages OK). Audit refait sur la 1.0.1 (permissions identiques, pas d'Internet, pas de secret).
+- Constat : cadre « Avis de mise à jour » dans les réglages de la version ami (pas d'Internet) ; Avast signale l'appli à chaque installation.
+- Reste à faire : retirer le chemin de compilation des bibliothèques natives ; mesurer sur d'autres utilisateurs ; décodeur AZERTY.
+
+## Premier benchmark en conditions réelles (ClavierBench, 08/11/2026)
+Phrases françaises recopiées en swipe sur le Pixel 6a, 5 sessions (niveau 5 : appareil réel, mais petit échantillon et nom du clavier saisi à la main).
+- Gboard : 88,6 % des mots justes du premier coup (265/299), 17 retours arrière pour 299 mots.
+- ClavierFR : 74,6 % (223/299), 158 retours arrière ; version de développement : 72,2 % (70/97, 1 seule session). Soit à peu près le niveau de FUTO : l'objectif « mieux que Gboard » n'est PAS atteint.
+- Le 75,6 % de notre rejeu hors ligne (mots isolés) n'avait jamais été comparé à Gboard ; on le retrouve en phrases réelles (75,7 %).
+- Erreurs ClavierFR : mots courts voisins (les/mes, l/m, fait/faut, le/me, si/soir), accents (a/à, ou/où, acheter/acheté, atteindre/éteindre), quelques vrais ratés de géométrie (bonjour, aujourd'hui, retard, pourrais).
+- Limite de l'outil : l'identifiant du clavier détecté (imeId) est périmé dans 3 sessions sur 5 ; les noms saisis à la main concordent avec les scores. À corriger (relever le clavier à chaque phrase).
+- Biais possible : ClavierFR (ami) est neuf, sans mots appris ; Gboard a des mois d'apprentissage.
+
+### Étude du décodeur AZERTY (08/11/2026) — conclusion : à ne PAS faire en priorité
+- Correction d'une erreur d'analyse : j'avais présenté le décodeur AZERTY comme le plus gros levier. Le rapport FUTO (arXiv 2606.25247, Table 3, lu via le HTML, certains chiffres de l'annexe non vérifiés) montre que leur décodeur n'apporte que +0,55 à +0,76 point de top-1 en anglais, avec 1,04 M de gestes réels. Avec ~1 100 gestes (tous de Doanh), le gain attendu est négligeable face aux 14 points d'écart avec Gboard.
+- Faisabilité technique : décodeur = petit réseau DFSMN (304 k paramètres) sur les sorties gelées de l'encodeur ; le runtime ExecuTorch Python marche sur le PC ; mais PyTorch est CPU seul (GTX 970, capacité 5.2, non utilisable) et le code d'entraînement FUTO n'est pas public. Pas de jeu de gestes français/AZERTY public.
+- Même l'encodeur FUTO fait 92,5 % top-1 en anglais/QWERTY (mots isolés) contre 75,6 % chez nous en français : l'écart vient surtout du français (accents, apostrophes, mots courts, dictionnaire, modèle de langue), pas de la disposition. Pistes réelles à évaluer : ré-entraîner/affiner l'encodeur sur du français (poids à extraire du .pte, architecture dans le rapport), modèle de langue/contexte plus fort (rang 2-4 = 11 % des mots), apprentissage perso.
+- Gboard n'est pas comparé dans le rapport FUTO (seulement SHARK2).
+
+## Version 1.1.0 « Dictée locale » (08/11/2026) — mode dictée seule, nouveau nom et icône
+- Nouveauté : réglage « Mode dictée seule » (Saisie vocale, défaut désactivé). Depuis Gboard, appui long sur le globe > Dictée locale : la dictée démarre seule, le texte est inséré, puis retour automatique au clavier précédent (`VoiceOnlyMode.kt`, hooks dans `LatinIME.onStartInputView` et la fermeture des fenêtres de dictée). Pas de démarrage dans les champs de mot de passe.
+- Niveau 5 (Pixel 6a, Gboard + Dictée locale) : ouverture automatique, retour par la flèche, dictée vocale réelle validée par Doanh (texte inséré + retour à Gboard). Non testé : autres applis que ClavierBench, champ mot de passe, autres téléphones.
+- Constat : un appui COURT sur le globe de Gboard ne change que la langue de Gboard (FR/EN/RU) ; il faut l'appui LONG pour choisir un autre clavier.
+- Nouveau nom « Dictée locale » (libellés seulement ; l'identifiant technique `org.futo.inputmethod.latin.clavierfr` est conservé pour que la mise à jour par-dessus fonctionne) et nouvelle icône micro + bulle de texte. Livrable : `apk\ami\DicteeLocale.apk`.
+- À faire : publier (dépôt GitHub encore nommé ClavierFR, release, fiche Ruche) après accord de Doanh ; installateur : l'APK 1.0.1 publié s'appelle encore ClavierFR.apk.

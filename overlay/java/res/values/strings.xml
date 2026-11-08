@@ -42,6 +42,8 @@
     <string name="clavierfr_collect_delete" translatable="false">Effacer les gestes collectés</string>
     <string name="clavierfr_collect_delete_summary" translatable="false">%1$d geste(s) enregistré(s) sur ce téléphone</string>
     <string name="clavierfr_collect_deleted" translatable="false">%1$d geste(s) effacé(s)</string>
+    <string name="clavierfr_voice_only" translatable="false">Mode dictée seule (avec un autre clavier)</string>
+    <string name="clavierfr_voice_only_summary" translatable="false">Quand vous passez à Dictée locale depuis un autre clavier (appui long sur l’icône globe de Gboard), la dictée démarre tout de suite, sans clavier à l’écran. Une fois le texte inséré, vous revenez automatiquement au clavier précédent. À activer seulement si vous utilisez Dictée locale pour la dictée.</string>
 
     <!-- Option name for enabling the use by the keyboards of sent/received messages, e-mail and typing history to improve suggestion accuracy [CHAR LIMIT=25] -->
     <string name="use_personalized_dicts">Personalized suggestions</string>

@@ -1,4 +1,4 @@
-# Compile la version « ami » (ClavierFR) : signée avec ta propre clé (voir README : keytool), sans outils de dev.
+# Compile la version « ami » (Dictée locale) : signée avec ta propre clé (voir README : keytool), sans outils de dev.
 # La clé et son mot de passe sont HORS du projet : %USERPROFILE%\ClavierFR-cles ou $env:CLAVIERFR_CLES (à sauvegarder, sinon impossible de faire des mises à jour).
 $ErrorActionPreference = "Stop"
 $racine = $PSScriptRoot
@@ -13,6 +13,6 @@ Set-Location "$racine\futo-keyboard"
 & .\gradlew.bat assembleAmiRelease -PnoMinify
 if ($LASTEXITCODE -ne 0) { throw "Build en echec" }
 New-Item -ItemType Directory -Force "$racine\apk\ami" | Out-Null
-Copy-Item "build\outputs\apk\ami\release\futo-keyboard-ami-release.apk" "$racine\apk\ami\ClavierFR.apk" -Force
+Copy-Item "build\outputs\apk\ami\release\futo-keyboard-ami-release.apk" "$racine\apk\ami\DicteeLocale.apk" -Force
 Copy-Item "$racine\futo-keyboard\LICENSE.md" "$racine\apk\ami\LICENCE-FUTO.md" -Force
-Write-Host "APK ami : $racine\apk\ami\ClavierFR.apk"
+Write-Host "APK ami : $racine\apk\ami\DicteeLocale.apk"
