@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 7.0 et 7.1 (pas d'icône adaptative) -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="12dp"/>
+            <solid android:color="#162B4A"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_launcher_foreground"/>
+</layer-list>

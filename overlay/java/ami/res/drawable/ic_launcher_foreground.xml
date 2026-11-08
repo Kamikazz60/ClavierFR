@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icône ClavierFR (dessin original, distinct du logo FUTO) : touches + trait de swipe. Zone sûre : 18..90 sur 108. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:fillColor="#DCE8F5" android:pathData="M31.5,36h7v8h-7zM40,36h7v8h-7zM48.5,36h7v8h-7zM57,36h7v8h-7zM65.5,36h7v8h-7z"/>
+    <path android:fillColor="#DCE8F5" android:pathData="M31.5,46.5h7v8h-7zM40,46.5h7v8h-7zM48.5,46.5h7v8h-7zM57,46.5h7v8h-7zM65.5,46.5h7v8h-7z"/>
+    <path android:fillColor="#DCE8F5" android:pathData="M36.25,57h7v8h-7zM44.75,57h7v8h-7zM53.25,57h7v8h-7zM61.75,57h7v8h-7z"/>
+    <path android:fillColor="#DCE8F5" android:pathData="M41,67.5h26v5h-26z"/>
+    <path android:strokeColor="#FF7A45" android:strokeWidth="3" android:strokeLineCap="round" android:fillColor="#00000000"
+        android:pathData="M34,61C42,30 54,64 63,47S73,38 76,40"/>
+    <path android:fillColor="#FF7A45" android:pathData="M34,61m-3.2,0a3.2,3.2 0,1 1,6.4 0a3.2,3.2 0,1 1,-6.4 0"/>
+    <path android:fillColor="#FFD2B8" android:pathData="M76,40m-3.2,0a3.2,3.2 0,1 1,6.4 0a3.2,3.2 0,1 1,-6.4 0"/>
+</vector>

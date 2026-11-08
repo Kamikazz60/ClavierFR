@@ -308,7 +308,8 @@ android {
             // ClavierFR : version à donner à un proche (nom, identifiant et signature propres, sans outils de dev ni mise à jour FUTO)
             dimension "buildType"
             applicationIdSuffix ".clavierfr"
-            versionName "1.0.0"
+            versionName "1.0.1"
+            versionCode 11769   // à incrémenter à chaque version distribuée (doit dépasser la précédente)
             versionNameSuffix ""
 
             buildConfigField "boolean", "IS_PLAYSTORE_BUILD", "false"

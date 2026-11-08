@@ -12,6 +12,7 @@ Elle n'est ni éditée ni soutenue par FUTO.
 - **Fréquence personnelle** : les mots que tu valides sont mémorisés localement et favorisent tes mots habituels au swipe.
 - **Apprentissage automatique des mots** tapés ou **dictés** (les noms propres, le jargon deviennent atteignables au swipe).
 - **Collecte locale optionnelle de gestes** (désactivée par défaut) : paires « geste / mot validé » gardées sur le téléphone pour améliorer plus tard le décodeur. Jamais dans les mots de passe, e-mails, adresses web ni en mode privé. Réglages > Texte prédictif.
+- Icône propre à ClavierFR (dessin original, différent du logo FUTO) ; l'assistant d'installation affiche encore le nom FUTO.
 - Version « ami » : nom et identifiant propres (`org.futo.inputmethod.latin.clavierfr`), **aucune permission Internet**, pas de recherche de mises à jour, pas d'outil de développement.
 - La **dictée vocale** est celle de FUTO, inchangée. Le modèle vocal n'est pas inclus : au premier usage, touche le message « aucun modèle » du panneau de saisie vocale (ou va sur https://keyboard.futo.tech/voice-input-models), télécharge le modèle français et ouvre-le avec ClavierFR.
 

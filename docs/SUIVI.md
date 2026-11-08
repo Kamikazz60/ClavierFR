@@ -169,3 +169,9 @@ Attendre la fin de l'entraînement `runsw1` (≈ 00h15), vérifier `runs_fw1.lo
 - Constat : **Avast One signale l'appli comme « suspecte »** (clavier + micro, APK hors Play Store). À mettre dans le guide de l'ami ; décision de Doanh sur l'alerte du Pixel en attente.
 - AAR `libs/futo-swipe-release.aar` : contenu identique à l'original (seulement ré-empaqueté) → le dépôt public peut renvoyer à l'AAR amont.
 - Dépôt public / store : NON commencés (attendent la fin des tests et l'accord).
+
+## Publication (08/11/2026)
+- Tests Pixel avant publication : mise à jour par-dessus OK (modèle vocal conservé), dictée à la voix OK (phrase reconnue, une erreur « genêts » → « gênés »), apprentissage OK (mot inventé tapé 2 fois devenu swipeable), import du modèle OK. L'APK 1.0.0 final n'a été reconstruit qu'avec versionName 1.0.0 après ces tests (pas retesté sur le téléphone).
+- Dépôt public : https://github.com/Kamikazz60/ClavierFR (overlay des fichiers FUTO modifiés + modèle français + outils ; commits sous l'adresse noreply de GitHub). Release v1.0.0 : ClavierFR.apk (SHA-256 0270150417…b69a), LICENCE-FUTO.md, LISEZMOI.txt. Dossier de préparation local : `Programme IA\ClavierFR-depot`.
+- Store Ruche : fiche `clavierfr` ajoutée (audit « points de vigilance »), déployée sur GitHub Pages.
+- À faire : retirer le chemin de compilation des bibliothèques natives (option de compilation file-prefix-map) ; changer l'icône de l'appli (c'est encore le logo FUTO) ; avertissement Avast à surveiller ; retester l'APK 1.0.0 final sur le Pixel si besoin.
